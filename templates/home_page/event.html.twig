@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %}Event!{% endblock %}
+{% block body %}
+<h1>Event</h1>
+
+<article>
+            <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">desc</th>
+      <th scope="col">img</th>
+      <th scope="col">date</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for articleEvent in articleEvents %}
+    <tr>
+      <th scope="row">{{articleEvent.id }} </th>
+      <td>{{articleEvent.titleEvent }} </td>
+      <td>{{articleEvent.descEvent }} </td>
+      <td><img width='200' src="{{articleEvent.imageEvent }}" alt=""></td>
+      <td>{{articleEvent.createdAtEvent | date('d/m/Y H:i:s') }} </td>
+    </tr>
+   
+        {% endfor %}
+  </tbody>
+</table>
+
+</article>
+
+
+
+
+
+
+
+
+
+{% endblock %}
